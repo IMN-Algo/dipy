@@ -1,8 +1,6 @@
 #! /usr/bin/env python
 # from _heapq import __about__
 
-#TODO : Implement the transformation functions
-
 import dipy.viz.guillotine as guillotine
 import dipy.viz.fvtk as fvtk
 import dipy.viz.fvtk_actors as fvtk_a
