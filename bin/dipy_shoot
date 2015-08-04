@@ -214,13 +214,15 @@ def buildArgsParser():
 def load_data_volume(filename):
     data = nib.load(filename)
     volume_data = data.get_data()
-    affine = data.get_affine()
+    affine = np.eye(4)
+#    affine = data.get_affine()
 
     return volume_data, affine
 
 
 def load_streamlines(filename):
-    streams, hdr = nib.trackvis.read(filename, points_space='rasmm')
+    streams, hdr = nib.trackvis.read(filename)
+#    streams, hdr = nib.trackvis.read(filename, points_space='rasmm')
     streamlines = [s[0] for s in streams]
 
     return streamlines
