@@ -34,9 +34,10 @@ def slicer(data, affine=None, opacity=1., value_range=None,
     opacity : float
         Opacity of 0 means completely transparent and 1 completely visible.
     value_range : None or tuple (2,)
-        Range from wich to build the lookup_colormap that will be taken to 
-        display the data. If None then the values will be (data.min(), data.max()).
-        This has no effect for color (3 components) images.
+        Range from wich to build the lookup_colormap that will be taken to
+        display the data. If None then the values will be
+        (data.min(), data.max()). This has no effect for color (3 components)
+        images.
     lookup_colormap : vtkLookupTable
         If None (default) then a grayscale map is created. This has no effect
         for color (3 components) images.
@@ -66,7 +67,6 @@ def slicer(data, affine=None, opacity=1., value_range=None,
         nb_components = 1
 
     im = vtk.vtkImageData()
-    im.SetNumberOfScalarComponents(nb_components)
     I, J, K = data.shape[:3]
     im.SetDimensions(I, J, K)
 
